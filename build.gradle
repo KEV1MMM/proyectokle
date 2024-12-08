@@ -1,0 +1,39 @@
+plugins {
+    id 'org.springframework.boot' version '3.4.0'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'klep'
+version = '1.0.0'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot Starter básico
+    implementation 'org.springframework.boot:spring-boot-starter'
+
+    // Conexión a base de datos relacional (SQL Server)
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'com.microsoft.sqlserver:mssql-jdbc'
+
+    // MongoDB
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
+    // Lombok (opcional para simplificar el código)
+    implementation 'org.projectlombok:lombok'
+
+    // Spring Boot DevTools (opcional, recarga automática)
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // Testing
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
+}
